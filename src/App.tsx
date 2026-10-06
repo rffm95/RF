@@ -119,7 +119,7 @@ export default function App() {
               >
                 <img 
                   src={prize.flag} 
-                  className="w-16 h-11 object-cover rounded shadow-md border-2 border-white/20" 
+                  className="w-16 h-16 object-contain bg-white p-1 rounded shadow-md border-2 border-white/20" 
                   alt="" 
                 />
                 <div className="flex flex-col">
@@ -164,7 +164,7 @@ export default function App() {
               >
                 <img 
                   src={prize.flag} 
-                  className="w-16 h-11 object-cover rounded shadow-md border-2 border-white/20" 
+                  className="w-16 h-16 object-contain bg-white p-1 rounded shadow-md border-2 border-white/20" 
                   alt="" 
                 />
                 <div className="flex flex-col text-right">
@@ -223,7 +223,7 @@ export default function App() {
                      {winner.award}
                   </h2>
                   <div className="flex items-center bg-white/20 px-8 py-4 rounded-2xl border-2 border-white/40">
-                     <img src={winner.flag} className="w-16 h-11 object-cover mr-6 rounded shadow-lg animate-pulse" alt="" />
+                     <img src={winner.flag} className="w-16 h-16 object-contain bg-white p-1 mr-6 rounded shadow-lg animate-pulse" alt="" />
                      <span className="text-4xl font-bold text-white tracking-widest">{winner.country}</span>
                   </div>
                 </>
