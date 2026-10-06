@@ -1,6 +1,15 @@
 import React, { useMemo } from 'react';
 import { Prize } from '../types';
 
+const WHEEL_NAMES: Record<string, string> = {
+  'FC Porto': 'Porto',
+  'SL Benfica': 'Benfica',
+  'Sporting CP': 'Sporting',
+  'Real Madrid': 'Real',
+  'Barcelona': 'Barça',
+  'Ac. Viseu': 'Académico',
+};
+
 interface RouletteWheelProps {
   prizes: Prize[];
   rotation: number;
@@ -28,18 +37,20 @@ const RouletteWheel: React.FC<RouletteWheelProps> = ({ prizes, rotation }) => {
             {prize.flag ? (
               <>
                 {/* Background border and flag for country slice */}
-                <rect x="-24" y="-72" width="48" height="46" fill="white" rx="3" />
-                <image href={prize.flag} x="-22" y="-70" width="44" height="42" preserveAspectRatio="xMidYMid meet" />
+                <rect x="-24" y="-82" width="48" height="46" fill="white" rx="3" />
+                <image href={prize.flag} x="-22" y="-80" width="44" height="42" preserveAspectRatio="xMidYMid meet" />
                 
                 <text
                   fill="white"
-                  fontSize="17"
+                  fontSize="14"
                   fontWeight="900"
                   textAnchor="middle"
-                  className="select-none font-sans uppercase tracking-wider"
-                  y="-22"
+                  className="select-none font-sans uppercase"
+                  textLength={prize.label === 'Ac. Viseu' ? 72 : undefined}
+                  lengthAdjust="spacingAndGlyphs"
+                  y="-8"
                 >
-                  {prize.label}
+                  {WHEEL_NAMES[prize.label] ?? prize.label}
                 </text>
                 
                 <text
@@ -48,7 +59,7 @@ const RouletteWheel: React.FC<RouletteWheelProps> = ({ prizes, rotation }) => {
                   fontWeight="900"
                   textAnchor="middle"
                   className="select-none font-sans uppercase tracking-[0.05em]"
-                  y="2"
+                  y="14"
                 >
                   {prize.award}
                 </text>
