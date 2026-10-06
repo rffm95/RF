@@ -28,8 +28,8 @@ const RouletteWheel: React.FC<RouletteWheelProps> = ({ prizes, rotation }) => {
             {prize.flag ? (
               <>
                 {/* Background border and flag for country slice */}
-                <rect x="-24" y="-72" width="48" height="32" fill="white" rx="3" />
-                <image href={prize.flag} x="-22" y="-70" width="44" height="28" preserveAspectRatio="none" />
+                <rect x="-24" y="-72" width="48" height="46" fill="white" rx="3" />
+                <image href={prize.flag} x="-22" y="-70" width="44" height="42" preserveAspectRatio="xMidYMid meet" />
                 
                 <text
                   fill="white"
@@ -39,7 +39,7 @@ const RouletteWheel: React.FC<RouletteWheelProps> = ({ prizes, rotation }) => {
                   className="select-none font-sans uppercase tracking-wider"
                   y="-22"
                 >
-                  {prize.country}
+                  {prize.label}
                 </text>
                 
                 <text
