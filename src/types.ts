@@ -15,7 +15,7 @@ const clubBadge = (initials: string, color: string) =>
   );
 
 export const PRIZES: Prize[] = [
-  { id: 0, label: "FC Porto", country: "FC Porto", award: "Metro (11 finos)", isWin: true, color: "#0050a4", flag: clubBadge("FCP", "#0050a4") },
+  { id: 0, label: "FC Porto", country: "FC Porto", award: "Régua (5 finos)", isWin: true, color: "#0050a4", flag: clubBadge("FCP", "#0050a4") },
   { id: 1, label: "Tenta outra vez", isWin: false, color: "#1a1a1a" },
   { id: 2, label: "SL Benfica", country: "SL Benfica", award: "Régua (5 finos)", isWin: true, color: "#c8102e", flag: clubBadge("SLB", "#c8102e") },
   { id: 3, label: "Tenta outra vez", isWin: false, color: "#1a1a1a" },
