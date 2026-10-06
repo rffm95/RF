@@ -95,9 +95,9 @@ export default function App() {
           >
             CHEERS O BAR
           </h1>
-          <div className="bg-amber-600 text-white font-black text-3xl px-16 py-5 rounded-full border-8 border-white/30 shadow-[0_0_80px_rgba(217,119,6,0.5)]">
-            <span className="text-white mr-10 tracking-[0.1em]">RÉGUA = 1 GIRO</span>
-            <span className="text-white tracking-[0.1em]">METRO = 2 GIROS</span>
+          <div className="bg-amber-600 text-white font-black text-2xl px-10 py-5 rounded-full border-8 border-white/30 shadow-[0_0_80px_rgba(217,119,6,0.5)]">
+            <span className="text-white mr-10 tracking-[0.03em]">RÉGUA (5 FINOS) = 1 GIRO</span>
+            <span className="text-white tracking-[0.03em]">METRO (11 FINOS) = 2 GIROS</span>
           </div>
         </div>
 
