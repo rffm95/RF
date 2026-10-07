@@ -6,12 +6,12 @@ import {defineConfig} from 'vite';
 
 export default defineConfig(() => {
   return {
-    base: '/MUNDIAL/',
+    base: './',
     plugins: [
       react(), 
       tailwindcss(),
       legacy({
-        targets: ['chrome >= 61', 'safari >= 11', 'ios >= 11'],
+        targets: ['chrome >= 49', 'safari >= 10', 'ios >= 10'],
       })
     ],
     build: {
