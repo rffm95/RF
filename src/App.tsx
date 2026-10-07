@@ -16,6 +16,29 @@ export default function App() {
   const [winner, setWinner] = useState<Prize | null>(null);
   const [showOverlay, setShowOverlay] = useState(false);
 
+  // Fit a complete stage into the TV browser's actual viewport, with safe edges.
+  const measureScale = () => {
+    const viewport = window.visualViewport;
+    const width = Math.min(window.innerWidth, document.documentElement.clientWidth || window.innerWidth, viewport ? viewport.width : window.innerWidth);
+    const height = Math.min(window.innerHeight, document.documentElement.clientHeight || window.innerHeight, viewport ? viewport.height : window.innerHeight);
+    return Math.min(width / 1440, height / 900) * 0.96;
+  };
+  const [stageScale, setStageScale] = useState(measureScale);
+
+  useEffect(() => {
+    const fitStage = () => setStageScale(measureScale());
+    fitStage();
+    window.addEventListener('resize', fitStage);
+    document.addEventListener('fullscreenchange', fitStage);
+    const viewport = window.visualViewport;
+    if (viewport) viewport.addEventListener('resize', fitStage);
+    return () => {
+      window.removeEventListener('resize', fitStage);
+      document.removeEventListener('fullscreenchange', fitStage);
+      if (viewport) viewport.removeEventListener('resize', fitStage);
+    };
+  }, []);
+
   const spin = useCallback(() => {
     if (isSpinning) return;
 
@@ -85,8 +108,8 @@ export default function App() {
   }, [spin, isSpinning, showOverlay]);
 
   return (
-    <div className="h-screen w-screen bg-black flex items-center justify-center overflow-hidden cursor-none select-none">
-      <div className="relative aspect-video h-full w-full p-10 flex flex-col items-center justify-between">
+    <div className="bg-black overflow-hidden cursor-none select-none" style={{ position: 'fixed', top: 0, left: 0, width: '100%', height: '100%' }}>
+      <div className="p-10 flex flex-col items-center justify-between" style={{ position: 'absolute', left: '50%', top: '50%', width: 1440, height: 900, boxSizing: 'border-box', transform: `translate(-50%, -50%) scale(${stageScale})`, transformOrigin: 'center center' }}>
         
         {/* Massive Branded Header */}
         <div className="z-10 text-center flex flex-col items-center mt-4">
