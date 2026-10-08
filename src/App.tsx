@@ -116,13 +116,16 @@ export default function App() {
         {/* Massive Branded Header */}
         <div className="z-10 text-center flex flex-col items-center mt-4">
           <h1 
-            className="text-white font-black text-[130px] leading-[0.8] tracking-tighter uppercase italic mb-8 drop-shadow-[5px_15px_25px_rgba(0,0,0,0.8)]"
+            className="text-white font-black text-[130px] leading-[0.8] tracking-tighter uppercase italic mb-5 drop-shadow-[5px_15px_25px_rgba(0,0,0,0.8)]"
           >
             CHEERS O BAR
           </h1>
-          <div className="bg-amber-600 text-white font-black text-2xl px-10 py-5 rounded-full border-8 border-white/30 shadow-[0_0_80px_rgba(217,119,6,0.5)]">
+          <div className="bg-amber-600 text-white font-black px-10 py-4 rounded-[2rem] border-8 border-white/30 shadow-[0_0_80px_rgba(217,119,6,0.5)]">
+            <p className="text-3xl leading-none mb-3">PEDE UMA RÉGUA OU UM METRO PARA GIRAR</p>
+            <div className="text-xl">
             <span className="text-white mr-10 tracking-[0.03em]">RÉGUA (5 FINOS) = 1 GIRO</span>
             <span className="text-white tracking-[0.03em]">METRO (11 FINOS) = 2 GIROS</span>
+            </div>
           </div>
         </div>
 
